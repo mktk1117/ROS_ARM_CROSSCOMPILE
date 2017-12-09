@@ -29,3 +29,16 @@ The script file `build_dependencies.sh` will cross compile above libraries into 
 cd /your workspace/ROS_ARM_CROSSCOMPILE
 source scripts/install_dependencies
 ```
+
+## Cross Compile ROS
+```bash
+cd ros_indigo
+catkin init
+catkin config --merge-devel # this is important, otherwise you may get weird linking errors
+catkin config --merge-install
+catkin config --install
+catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=/home/takahiro/cross_compile/ros_catkin_ws/rostoolchain.cmake
+touch src/geometry2/tf2/test/CATKIN_IGNORE
+touch src/vision_opencv/image_geometry/test/CATKIN_IGNORE
+```
+
