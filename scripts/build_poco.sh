@@ -1,4 +1,6 @@
 #! /bin/bash
+DIR=`pwd`
+echo "The present working directory is `pwd`"
 mkdir -p build
 mkdir -p arm-linux/bin
 mkdir -p arm-linux/lib
@@ -9,7 +11,7 @@ tar xzvf poco-1.8.0.1.tar.gz
 rm poco-1.8.0.1.tar.gz
 cp ../config/ARM-Linux-gnueabihf poco-1.8.0.1/build/config/
 cd poco-1.8.0.1
-./configure --config=ARM-Linux-gnueabihf --prefix=../../arm-linux --no-samples --no-tests
+./configure --config=ARM-Linux-gnueabihf --prefix=${DIR}/arm-linux --no-samples --no-tests
 make
 make install
-cd ../../
+cd ${DIR}
