@@ -1,4 +1,9 @@
 #! /bin/bash
+mkdir -p build
+mkdir -p arm-linux/bin
+mkdir -p arm-linux/lib
+mkdir -p arm-linux/include
+cd build
 wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.xz
 tar xvf Python-2.7.3.tar.xz
 rm Python-2.7.3.tar.xz
@@ -11,7 +16,7 @@ mv Parser/pgen Parser/hostpgen
 make distclean
 patch -p1 < Python-2.7.3-xcompile.patch
 CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ AR=arm-linux-gnueabihf-ar RANLIB=arm-linux-gnueabihf-ranlib CFLAGS=-fPIC CXXFLAGS=-fPIC
-./configure --host=arm-linux --build=x86_64-linux-gnu --prefix=../arm-linux --enable-shared
+./configure --host=arm-linux --build=x86_64-linux-gnu --prefix=../../arm-linux --enable-shared
 make HOSTPYTHON=./hostpython HOSTPGEN=./Parser/hostpgen BLDSHARED="arm-linux-gnueabihf-gcc -shared" CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE_TARGET=yes HOSTARCH=arm-linux BUILDARCH=x86_64-linux-gnu
-make install HOSTPYTHON=./hostpython BLDSHARED="arm-linux-gnueabihf-gcc -shared" CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE_TARGET=yes prefix=../arm-linux
-cd ../
+make install HOSTPYTHON=./hostpython BLDSHARED="arm-linux-gnueabihf-gcc -shared" CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE_TARGET=yes prefix=../../arm-linux
+cd ../../
