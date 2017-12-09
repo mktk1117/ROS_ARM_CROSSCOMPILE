@@ -8,5 +8,7 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main"
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install python-catkin-tools -y
+sudo apt install cmake -y
+sudo apt-get install python-numpy -y
 sudo rosdep init 
 rosdep update

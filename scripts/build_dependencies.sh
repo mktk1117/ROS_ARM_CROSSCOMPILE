@@ -10,6 +10,7 @@ if [ $DIR_NAME == ROS_ARM_CROSSCOMPILE ] ; then
   source scripts/build_tinyxml.sh
   source scripts/build_python.sh
   source scripts/build_boost.sh
+  source scripts/build_opencv.sh
 else
   echo "Run the command from ROS_ARM_CROSSCOMPILE directory"
   echo "Finished with error."
