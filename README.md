@@ -37,7 +37,7 @@ catkin init
 catkin config --merge-devel # this is important, otherwise you may get weird linking errors
 catkin config --merge-install
 catkin config --install
-catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=/your ws/ROS_ARM_CROSSCOMPILE/ros_indigo/rostoolchain.cmake
+catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCROSS_ROOT=/your ws/ROS_ARM_CROSSCOMPILE -DCMAKE_TOOLCHAIN_FILE=/your ws/ROS_ARM_CROSSCOMPILE/ros_indigo/rostoolchain.cmake
 touch src/geometry2/tf2/test/CATKIN_IGNORE  # to avoid error
 touch src/vision_opencv/image_geometry/test/CATKIN_IGNORE
 touch src/geometry/tf/test/CATKIN_IGNORE
