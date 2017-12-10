@@ -27,7 +27,7 @@ It compiles
 The script file `build_dependencies.sh` will cross compile above libraries into `ROS_ARM_CROSSCOMPILE/arm-linux`.
 ```bash
 cd /your workspace/ROS_ARM_CROSSCOMPILE
-source scripts/install_dependencies.sh
+source scripts/build_dependencies.sh
 ```
 
 ## Cross Compile ROS
