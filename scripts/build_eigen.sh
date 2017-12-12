@@ -8,6 +8,7 @@ mkdir -p arm-linux/include
 cd build
 wget http://bitbucket.org/eigen/eigen/get/3.2.8.tar.bz2
 tar xvhf 3.2.8.tar.bz2 && mv eigen-eigen-07105f7124f9 eigen-3.2.8
+rm 3.2.8.tar.bz2
 cd eigen-3.2.8
 mkdir build
 cd build
